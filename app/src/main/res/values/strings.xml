@@ -2,4 +2,8 @@
     <string name="app_name">Parks and Campgrounds</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Navigation bar items -->
+    <string name="text_parks">Park</string>
+    <string name="text_campgrounds">Campground</string>
 </resources>
