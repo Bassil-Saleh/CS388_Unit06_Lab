@@ -1,9 +1,11 @@
 package com.codepath.lab6
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.codepath.lab6.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.serialization.json.Json
 
 // Helper function for JSON parsing
@@ -29,6 +31,18 @@ class MainActivity : AppCompatActivity() {
 
         // Call helper method to swap the FrameLayout with the fragment
         replaceFragment(ParksFragment())
+
+        // When the user selects a category on the bottom navigation bar
+        val bottomNavView = findViewById<BottomNavigationView>(R.id.navigationBar)
+        bottomNavView.setOnItemSelectedListener { item ->
+            val fragment: Fragment = when(item.itemId) {
+                R.id.action_parks -> ParksFragment()
+                R.id.action_campgrounds -> CampgroundFragment()
+                else -> ParksFragment()
+            }
+            replaceFragment(fragment)
+            true
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
