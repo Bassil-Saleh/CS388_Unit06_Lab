@@ -16,7 +16,7 @@ import org.json.JSONException
 private const val TAG = "ParksFragment"
 private const val API_KEY = BuildConfig.API_KEY
 private const val PARKS_URL =
-    "https://developer.nps.gov/api/v1/parks?api_key=\${API_KEY}"
+    "https://developer.nps.gov/api/v1/parks?api_key=${API_KEY}"
 
 class ParksFragment : Fragment() {
     private val parks = mutableListOf<Park>()
